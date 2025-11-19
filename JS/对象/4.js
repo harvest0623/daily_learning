@@ -8,9 +8,11 @@
 // // delete num.a;
 // console.log(num + 1); 
 
-var str = 'hello'; 
 // typeof('hello') //string
 // var str = new String('hello')
+
+
+var str = 'hello'; 
 str.length = 2;
 console.log(str.length);
 console.log(typeof(str));

@@ -13,6 +13,5 @@
 function Person() {
 
 }
-
 const obj = new Person();
 console.log(obj);
