@@ -26,11 +26,11 @@
 // }
 
 
-function foo() {
-    var a = 1;
-    bar(this.a);
-}
-function bar(x) {
-    console.log(x);
-}
-foo();
+// function foo() {
+//     var a = 1;
+//     bar(this.a);
+// }
+// function bar(x) {
+//     console.log(x);
+// }
+// foo();

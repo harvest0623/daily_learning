@@ -1,7 +1,7 @@
-// function foo() {
-//     console.log(this);
-// }
-// foo();
+function foo() {
+    console.log(this);
+}
+foo();
 
 // var bar = () => {
 //     console.log(this);

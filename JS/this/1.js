@@ -5,10 +5,10 @@
 //     var greet = 'hello, I am ' + identify(context);
 //     console.log(greet);
 // }
-// var me = {
+// var myname = {
 //     name: 'henry'
 // }
-// speak(me);
+// speak(myname);
 
 
 function identify() {
@@ -18,7 +18,7 @@ function speak() {
     var greet = 'hello, I am ' + identify.call(this);
     console.log(greet);
 }
-var me = {
+var myname = {
     name: 'henry'
 }
-speak.call(me);
+speak.call(myname);
