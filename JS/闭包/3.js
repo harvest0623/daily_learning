@@ -7,7 +7,6 @@ function foo() {
 }
 var myName = 'harvest';
 foo();
-
 function test() {
     console.log(1);
 }
