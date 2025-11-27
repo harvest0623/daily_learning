@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body, html{
+    height: 100%;
+}
+.music{
+    background-color: #2A2A2A;
+    height: 100%;
+}
+.head{
+    height: 76px;
+    background-color: #161616;
+    color: white;
+    position: relative;
+    /* font-size: 0; */
+}
+.back, .more{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+.title{
+    height: 100%;
+    text-align: center;
+    line-height: 76px;
+}
+.back{
+    left: 16px;
+    top: 18px;
+}
+.more{
+    right: 16px;
+    top: 18px;
+}
+/* .back, .title, .more{
+    display: inline-block;
+    font-size: 16px;
+}
+.back, .more{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+.back{
+    margin-left: 16px;
+    margin-top: 18px;
+}
+.title{
+    width: calc(100% - 112px);
+} */
