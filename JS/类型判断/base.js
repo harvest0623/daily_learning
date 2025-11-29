@@ -13,6 +13,7 @@
 // p.__proto__.__proto__.__proto__ = Object.prototype
 
 // p instanceof Object
+
 const obj = {
     a: 1
 }
