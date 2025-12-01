@@ -55,13 +55,11 @@ body{
 .front::after{
     z-index: 1;
 }
-.back::after{
-    z-index: 2;
-}
 .front::before{
     z-index: 3;
 }
 .back::after{
+    z-index: 2;
     transform-origin: center top;
     transform: rotateX(0.5turn);
 }
