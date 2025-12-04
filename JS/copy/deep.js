@@ -20,3 +20,6 @@ function deepClone(obj) {
     }
     return o;
 }
+const newObj = deepClone(obj);
+obj.like.m = '🏀';
+console.log(newObj); // 还是🎤（彻底独立！）
