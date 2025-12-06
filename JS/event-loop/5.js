@@ -19,7 +19,6 @@ async function work() {
 work();
 // 其他同步任务
 console.log('核心工作：处理其他紧急事务');
-
 // new Promise((resolve) => {
 //     console.log('同步代码');
 //     resolve();
