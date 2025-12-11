@@ -10,6 +10,7 @@
 # __mock__
 json-server db.json
 
+
 - 删除
 http://localhost:3000/data/1    // 1 为被删除的数据的id
 
