@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --bg-primary: #f7fafc;
+    --bg-secondary: #edf2f7;
+    --accent-color: #646cff;
+    --accent-hover: #535bf2;
+    --border-color: #e2e8f0;
+    --input-bg: #ffffff;
+    --output-bg: #ffffff;
+    --output-header-bg: #f7fafc;
+}

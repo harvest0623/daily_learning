@@ -1,0 +1,132 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.app-header{
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+.app-header h1 {
+    font-size: 2.2rem;  /* rem 是一个相对单位，1rem == 页面跟字体大小*/
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+.chat-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.input-section {
+    margin-bottom: 10px;
+}
+.input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+.input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+}
+.submit-btn {
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submit-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+}
+.submit-btn:active {
+    transform: translateY(0);
+}
+.settings-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.settings-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+.settings-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.output-section {
+    flex: 1;
+    background-color: var(--output-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.output-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--output-header-bg);
+}
+.output-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+.output-content {
+    padding: 20px;
+    min-height: 300px;
+    line-height: 1.7;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+.app-footer {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
