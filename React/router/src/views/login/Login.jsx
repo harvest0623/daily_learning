@@ -5,7 +5,7 @@ export default function Login() {
     const navigate = useNavigate();
     const login = () => {
         // navigate('/home?id=123')
-        navigate('/home/id123')
+        navigate('/home')
     }
     return (
         <div className="login">
