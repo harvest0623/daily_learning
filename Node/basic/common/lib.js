@@ -19,4 +19,10 @@
 function add(x, y){
     return x + y;
 }
-export default add
+function minus(x, y){
+    return x - y;
+}
+export default {
+    add,
+    minus
+}

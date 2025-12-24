@@ -4,7 +4,7 @@ module.exports = function (playerAction) {
     const computerAction = arr[index];
     console.log(`我出了${computerAction}`);
 
-    //比较
+    // 比胜负，返回结果（0=平，-1=你赢，1=你输）
     if (computerAction === playerAction) {
         console.log('平局');
         return 0;
