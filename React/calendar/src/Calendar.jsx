@@ -29,6 +29,7 @@ export default function Calendar(props) {
         for (let i = 0; i < firstDay; i++) {
             days.push(<div key={`empty-${i}`} className='empty'></div>);
         }
+        
         for (let j = 1; j <= daysCount; j++) {
             const clickhandler = () => {
                 const curDate = new Date(date.getFullYear(), date.getMonth(), j);
