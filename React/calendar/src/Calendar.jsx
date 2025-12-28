@@ -18,6 +18,7 @@ export default function Calendar(props) {
     const daysofMonth = (year, month) => {
         return new Date(year, month + 1, 0).getDate();
     }
+    
     const firstDayofMonth = (year, month) => {
         return new Date(year, month, 1).getDay();   
     }
