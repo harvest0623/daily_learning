@@ -27,8 +27,8 @@ let list = {
     }
 }
 
-let node = list
+let node = list;
 for (let i = 1; i < 8 && node; i++) {
-    node = node.next
+    node = node.next;
 }
 console.log(node);
