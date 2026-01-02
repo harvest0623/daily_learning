@@ -1,5 +1,4 @@
 const arr = [1, 2, 3, 1, 2];
-
 const s = [...new Set(arr)];
 console.log(s);
 
