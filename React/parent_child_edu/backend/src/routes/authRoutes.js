@@ -6,6 +6,7 @@ const router = new Router({
     prefix: '/api/auth'  // 所有接口都以 /api/auth 开头(路由前缀)
 });
 
+// 定义登录接口
 router.post('/login', login);
 
 module.exports = router
