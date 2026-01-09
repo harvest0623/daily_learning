@@ -1,11 +1,12 @@
 import '../styles/Login.less'
 import { useState } from 'react'
 import { Toast } from 'antd-mobile'
+import axios from '../http'
 
 export default function Login() {
     const [loading, setLoading] = useState(false);
-    const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
+    const [phone, setPhone] = useState('18679460523');
+    const [password, setPassword] = useState('123');
     const handleSubmit = async (e) => {
         e.preventDefault(); // 阻止表单默认提交行为
 
@@ -14,23 +15,41 @@ export default function Login() {
         const majorChineseEmailRegex = /^[a-zA-Z0-9._%+-]+@(?:qq\.com|163\.com|126\.com|sina\.(?:com|cn)|sohu\.com|yeah\.net|gmail\.com|hotmail\.com|outlook\.com|foxmail\.com|aliyun\.com)$/i;
         if (!phoneRegex.test(phone) && !majorChineseEmailRegex.test(phone)) {
             Toast.show({
-                // icon: 'fail',
+                icon: 'fail',
                 content: '请输入正确的账号',
             })
             return;
         }
 
         // 向后端发请求
-        const res = await fetch('http://localhost:3000/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                phone,
-                password
-            }),
+        // const res = await fetch('http://localhost:3000/api/auth/login', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         phone,
+        //         password
+        //     })
+        // })
+        const res = await axios.post('http://localhost:3000/api/auth/login', {
+            phone,
+            password
         })
+        console.log(res);
+        // const data = res.data;
+        // console.log(data);
+        // if (data.token) {
+        //     Toast.show({
+        //         icon: 'success',
+        //         content: data.message
+        //     })
+        // } else {
+        //     Toast.show({
+        //         icon: 'fail',
+        //         content: '登录失败'
+        //     })
+        // }
     }
     return (
         <div>
@@ -38,17 +57,23 @@ export default function Login() {
                 <div className="auth-form__group">
                     <i className="iconfont icon-zhanghao"></i>
                     <input type="tel" placeholder="请输入手机号或邮箱"
-                        className="auth-form__input" onChange={(e) => {
+                        className="auth-form__input"
+                        value={phone}
+                        onChange={(e) => {
                             setPhone(e.target.value);
-                        }} />
+                        }} 
+                    />
                 </div>
 
                 <div className="auth-form__group">
                     <i className="iconfont icon-mima"></i>
                     <input type="password" placeholder="请输入密码"
-                        className="auth-form__input" onChange={(e) => {
+                        className="auth-form__input" 
+                        value={password}
+                        onChange={(e) => {
                             setPassword(e.target.value);
-                        }} />
+                        }}
+                    />
                 </div>
 
                 <div className="auth-form__forgot-wrapper">

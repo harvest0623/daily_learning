@@ -2,8 +2,14 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
 const authRoutes = require('./routes/authRoutes.js'); 
+const cors = require('@koa/cors');
 
 const app = new Koa();
+app.use(cors({  // 允许跨域请求
+    origin() {
+        return 'http://localhost:5173';
+    },
+}));
 
 // 测试接口
 const router = new Router({
