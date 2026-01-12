@@ -30,16 +30,16 @@ axios.interceptors.response.use(
        if(error.status !== 200) {
             Toast.show({
                 icon: 'fail',
-                content: error.message
+                content: response.data.message
             });
             if (error.status === 416) {  // 没有权限
-                Toast.show({
-                    icon: 'fail',
-                    content: '没有权限访问，请先登录'
-                });
+                // 重定向去到登录页
+                localStorage.removeItem('token');
+                window.location.href = '/login';
             }
-            return Promise.reject(error);
+            return Promise.reject(response);
        }
+       return error;
     }
 )
 

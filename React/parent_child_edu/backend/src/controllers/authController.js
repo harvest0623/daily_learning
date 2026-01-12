@@ -50,7 +50,8 @@ async function login(ctx) {
         user: {
             id: user.id,
             phone: user.phone,
-        }
+        },
+        code: 1
     }   
 }
 

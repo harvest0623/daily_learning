@@ -10,9 +10,15 @@
     3. npm i react-router-dom 安装路由，开发登录注册页面
 
 - ajax 错误统一处理：
-    npm install axios 
+    npm install axios 安装 axios 代替 fetch，用来发送 ajax 请求
 
     二次封装 axios
+
+- 浏览器的储存
+    1. localStorage：本地存储（内存大小大约 5-8M，永久有效）
+    2. sessionStorage：会话存储（内存大小大约 5-8M，关闭浏览器后会被清除）
+    3. cookie：会话存储（内存大小大约 4K，会自动携带在每次请求中，后端可以通过 req.cookies 来获取，后端控制它的有效时间）
+    4. IndexedDB：客户端的数据库存储（）
 
 # 后端(服务端)
 - 定义多个接口:

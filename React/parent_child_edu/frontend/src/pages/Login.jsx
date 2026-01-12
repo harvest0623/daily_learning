@@ -2,8 +2,10 @@ import '../styles/Login.less'
 import { useState } from 'react'
 import { Toast } from 'antd-mobile'
 import axios from '../http'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [phone, setPhone] = useState('18679460523');
     const [password, setPassword] = useState('123');
@@ -37,6 +39,20 @@ export default function Login() {
             password
         })
         console.log(res);
+        localStorage.setItem('token', res.data.token);
+        navigate('/');
+
+
+        // const res = await fetch('http://localhost:3000/api/auth/login', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         phone,
+        //         password
+        //     })
+        // })
         // const data = res.data;
         // console.log(data);
         // if (data.token) {
