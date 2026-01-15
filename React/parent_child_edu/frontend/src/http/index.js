@@ -25,7 +25,7 @@ axios.interceptors.response.use(
             })
             return Promise.reject(response);
         }
-        return response
+        return response;
     },
     (res) => { // 程序性错误
         if (res.status !== 200) {

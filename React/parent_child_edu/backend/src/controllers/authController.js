@@ -1,7 +1,7 @@
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
-const { findUserByPhone, createUser } = require('../models/userModel.js')
-const { generateCaptcha, verifyCaptcha } = require('../utils/captcha.js')
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const { findUserByPhone, createUser } = require('../models/userModel.js');
+const { generateCaptcha, verifyCaptcha } = require('../utils/captcha.js');
 
 
 async function login(ctx) {
