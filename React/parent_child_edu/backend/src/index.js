@@ -12,11 +12,7 @@ dotenv.config({
 })
 
 const app = new Koa();
-app.use(cors({  // 处理跨域
-    origin() {
-        return 'http://localhost:5173'
-    }
-}));
+app.use(cors());
 
 // 测试接口
 const router = new Router({
