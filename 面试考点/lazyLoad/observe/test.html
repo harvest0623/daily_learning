@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片懒加载演示</title>
+    <style>
+        img {
+            display: block;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="placeholder.jpg" loading="lazy" alt="图片"> -->
+    <img src="" lazyload="true" data-origin="https://inews.gtimg.com/om_bt/OG4Cnt2SgXAuTj-Vv77ASGszUj1BwOhUXtBCplSlBfQmAAA/641" alt="">
+    <img src="" lazyload="true" data-origin="https://inews.gtimg.com/om_bt/Os3eJ8u3SgB3Kd-zrRRhgfR5hUvdwcVPKUTNO6O7sZfUwAA/641" alt="">
+    <img src="" lazyload="true" data-origin="https://inews.gtimg.com/news_bt/OceYG4p3E6SGFqFBN500JOHSiO4recmt6S1_fml1rlgUEAA/641" alt="">
+    <img src="" lazyload="true" data-origin="https://img1.baidu.com/it/u=2631091293,484496842&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="">
+    <img src="" lazyload="true" data-origin="https://img2.baidu.com/it/u=3107839948,3570219976&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500" alt="">
+    <img src="" lazyload="true" data-origin="https://inews.gtimg.com/om_bt/O98tXzU2bQgRJ5nRiiJQx_6uwzkB_rsF9e6TA7kcXr058AA/1000" alt="">
+    <img src="" lazyload="true" data-origin="https://inews.gtimg.com/om_bt/Oz13eqQ6iXnUgh-eQxuXT8VmWvogpk66DvRM52Oe0QbNQAA/1000" alt="">
+    <img src="" lazyload="true" data-origin="https://inews.gtimg.com/om_bt/Otvjht3x4wA58ZkSIxSo88NZTsyD6ZdUyiLMHZmGFoHokAA/641" alt="">
+    <img src="" lazyload="true" data-origin="https://inews.gtimg.com/news_bt/O7ZsQ9IrSfcWAWLPeaRcfeEt5FdyeTfnFYrSGmDSKlU0sAA/1000" alt="">
+    <img src="" lazyload="true" data-origin="https://inews.gtimg.com/om_bt/O_2D2lSAfCS8o9_fGMsuNxOArO_rS1j9Nc2vsYaEaq2PwAA/641" alt="">
+    <script>
+        // 1. 实例化 IntersectionObserver，传入回调函数
+        const io = new IntersectionObserver(
+            (entries) => {
+                // entries 是被观察元素的状态数组
+                entries.forEach(item => {
+                    // isIntersecting 为 true 表示元素进入了视口
+                    if (item.isIntersecting) {
+                        // 把 data-origin 里的真实地址赋值给 src，触发图片加载
+                        item.target.src = item.target.dataset.origin;
+                        // 移除 lazyload 标记，避免重复处理
+                        item.target.removeAttribute('lazyload');
+                        // 加载完成后停止观察该元素，节省性能
+                        io.unobserve(item.target);
+                    }
+                })
+            }
+        )
+
+        // 2. 获取所有需要懒加载的图片，逐个进行观察
+        const imgs = document.querySelectorAll('img[lazyload]');
+        imgs.forEach(item => {
+            io.observe(item);
+        })
+        // // 实例化时添加配置项
+        // const io = new IntersectionObserver(
+        //     (entries) => {
+        //         entries.forEach(item => {
+        //             if (item.isIntersecting) {
+        //                 item.target.src = item.target.dataset.origin;
+        //                 item.target.removeAttribute('lazyload');
+        //                 io.unobserve(item.target);
+        //             }
+        //         })
+        //     },
+        //     {
+        //         threshold: 0.1 // 元素可见度达到 10% 时触发回调
+        //     }
+        // )
+    </script>
+</body>
+
+</html>
